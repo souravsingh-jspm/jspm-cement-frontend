@@ -1,5 +1,6 @@
 export const FRONTEND_ROUTES = {
   HOME: "/",
+  LOGIN: "/admin-login",
   KEYNOTE_SPEAKERS: "/keynote-speakers",
   CONFERENCE_COMMITTEE: "/conference-committee",
   CONFERENCE_THEME: "/conference-theme",

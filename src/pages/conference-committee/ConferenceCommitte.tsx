@@ -44,7 +44,7 @@ const ConferenceCommitte = () => {
       className="py-20 bg-gradient-to-br from-gray-50 to-teal-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center my-10">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Conference{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">

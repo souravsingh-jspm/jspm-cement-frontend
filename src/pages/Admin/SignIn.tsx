@@ -1,7 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { LogIn } from "lucide-react";
+import { isSessionValid } from "@/utils/authHelpers";
 
-export function SignIn() {
+export default function SignIn() {
+  useEffect(() => {
+    if (!isSessionValid()) {
+      window.location.href = "/";
+    }
+  }, []);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -11,10 +17,43 @@ export function SignIn() {
     e.preventDefault();
     setError("");
     setLoading(true);
+    console.log(email, password);
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/admin/login", {
+        //Need to be changed
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
 
-    // const { error } = await signIn(email, password);
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data?.message || "Invalid email or password");
+      }
+      if (data?.user) {
+        const userDetails = {
+          id: data.user.id,
+          email: data.user.email,
+          loginTime: Date.now(),
+        };
 
-    setLoading(false);
+        localStorage.setItem("user_details", JSON.stringify(userDetails));
+
+        // window.location.href = "/"; // Need to change
+      } else {
+        throw new Error("Invalid response from server");
+      }
+    } catch (err: any) {
+      console.error(err);
+      setError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -85,7 +124,7 @@ export function SignIn() {
               {loading ? "Signing In..." : "Sign In"}
             </button>
           </form>
-
+          {/* 
           <div className="mt-6 text-center">
             <p className="text-gray-600">
               Don't have an account?{" "}
@@ -93,7 +132,7 @@ export function SignIn() {
                 Sign Up
               </button>
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
