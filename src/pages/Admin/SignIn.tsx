@@ -1,13 +1,20 @@
 import { useState, useEffect } from "react";
 import { LogIn } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { isSessionValid } from "@/utils/authHelpers";
+import { API_URL } from "@/constants/appConstants";
+
+const url = API_URL + "admin/login";
 
 export default function SignIn() {
+  const navigate = useNavigate();
+
   useEffect(() => {
-    if (!isSessionValid()) {
-      window.location.href = "/";
+    if (isSessionValid()) {
+      navigate("/admin-panel"); // redirect to admin panel
     }
-  }, []);
+  }, [navigate]);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -17,36 +24,28 @@ export default function SignIn() {
     e.preventDefault();
     setError("");
     setLoading(true);
-    console.log(email, password);
+
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/admin/login", {
-        //Need to be changed
+      const response = await fetch(url, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await response.json();
-      if (!response.ok) {
-        throw new Error(data?.message || "Invalid email or password");
-      }
+      if (!response.ok) throw new Error(data?.message || "Invalid credentials");
+
       if (data?.user) {
         const userDetails = {
           id: data.user.id,
           email: data.user.email,
           loginTime: Date.now(),
         };
-
         localStorage.setItem("user_details", JSON.stringify(userDetails));
 
-        // window.location.href = "/"; // Need to change
+        navigate("/admin-panel");
       } else {
-        throw new Error("Invalid response from server");
+        throw new Error("Invalid server response");
       }
     } catch (err: any) {
       console.error(err);
@@ -119,20 +118,11 @@ export default function SignIn() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-[#0099B6] to-[#00B7A9] text-white py-3 rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              className="w-full bg-gradient-to-r from-[#0099B6] to-[#00B7A9] text-white py-3 rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50"
             >
               {loading ? "Signing In..." : "Sign In"}
             </button>
           </form>
-          {/* 
-          <div className="mt-6 text-center">
-            <p className="text-gray-600">
-              Don't have an account?{" "}
-              <button className="text-[#0099B6] font-semibold hover:text-[#00B7A9] transition-colors">
-                Sign Up
-              </button>
-            </p>
-          </div> */}
         </div>
       </div>
     </div>

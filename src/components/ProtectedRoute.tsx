@@ -6,13 +6,14 @@ interface ProtectedRouteProps {
   children: JSX.Element;
 }
 
-export default function ProtectedRoute({ children }: ProtectedRouteProps) {
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   const isValid = isSessionValid();
 
   if (!isValid) {
-    // Session expired or not logged in
-    return <Navigate to="" />;
+    return <Navigate to="/admin-login" replace />;
   }
 
   return children;
-}
+};
+
+export default ProtectedRoute;

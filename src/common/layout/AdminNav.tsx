@@ -1,6 +1,7 @@
 import { FileText } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { clearSession } from "@/utils/authHelpers";
 
 export default function LandingNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,7 +53,8 @@ export default function LandingNav() {
               className="ml-4 px-6 py-2 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-lg hover:from-teal-600 hover:to-cyan-700 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center space-x-2"
             >
               <FileText size={18} />
-              <span>Logout</span>
+              <button onClick={() => clearSession()}>Logout</button>
+              {/* <span>Logout</span> */}
             </Link>
           </div>
         </div>

@@ -7,7 +7,6 @@ import {
   Registration,
   SubmitPaper,
 } from "./lazyLoaded";
-import { SignIn } from "../admin/adminLazyLoaded";
 import { FRONTEND_ROUTES } from "@/constants/routeConstants";
 
 export const landingRoutes = [
