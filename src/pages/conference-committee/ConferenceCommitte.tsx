@@ -1,5 +1,34 @@
-import { Users, Shield, Globe } from "lucide-react";
+import { Users, Shield, Globe, User, Award, Building2 } from "lucide-react";
 
+import FounderSecreatary from "@/assets/Images/CommitteeImages/Founder Secretary.png";
+import Presedent from "@/assets/Images/CommitteeImages/Presedent.png";
+import ViceChancellor from "@/assets/Images/CommitteeImages/Vice Chancellor.png";
+import Dean from "@/assets/Images/CommitteeImages/Dean.png";
+
+const CHIEF_PATRON = [
+  {
+    name: "Prof. (Dr.) T. J. Sawant",
+    title: "Founder Secretary, JSPM Group of Institutes, Pune",
+    image: FounderSecreatary,
+  },
+];
+const PATRON = [
+  {
+    name: "Prof. (Dr.) R. S. Joshi",
+    title: "President, JSPM University Pune",
+    image: Presedent,
+  },
+  {
+    name: "Prof. (Dr.) B. B. Ahuja",
+    title: "Vice Chancellor, JSPM University Pune",
+    image: ViceChancellor,
+  },
+  {
+    name: "Prof. R. S. Deshpande",
+    title: "Dean, FST, JSPM University Pune",
+    image: Dean,
+  },
+];
 const committeeData = {
   organizing: [
     {
@@ -151,6 +180,7 @@ const ConferenceCommitte = () => {
       id="committee"
       className="py-20 bg-gradient-to-br from-gray-50 to-teal-50"
     >
+      {" "}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center my-10">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -164,6 +194,74 @@ const ConferenceCommitte = () => {
           </p>
         </div>
 
+        <h2 className="text-4xl font-bold text-gray-900 mb-4 underline">
+          CHIEF{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600 ">
+            PATRON
+          </span>
+        </h2>
+        <div className="my-3">
+          <div className="grid grid-cols-1 gap-8 px-6 max-w-7xl">
+            {CHIEF_PATRON.map((cp, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden text-center transform hover:-translate-y-2 transition-all duration-300"
+              >
+                {/* Image */}
+                <img
+                  src={cp.image}
+                  alt={cp.name}
+                  className="w-full h-[30vh] object-contain bg-white"
+                />
+
+                {/* Details */}
+                <div className="p-6 space-y-3">
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    {cp.name}
+                  </h3>
+
+                  <div className="flex items-center justify-center space-x-2">
+                    <Award className="text-teal-600" size={16} />
+                    <p className="text-sm text-gray-700">{cp.title}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <h2 className="text-4xl font-bold text-gray-900 mb-4 underline">
+          PAT
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">
+            RON
+          </span>
+        </h2>
+        <div className="">
+          <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 max-w-7xl my-3">
+            {PATRON.map((p, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden text-center transform hover:-translate-y-2 transition-all duration-300"
+              >
+                {/* Image */}
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  className="w-full h-[30vh] object-contain bg-white"
+                />
+
+                {/* Details */}
+                <div className="p-6 space-y-3">
+                  <h3 className="text-2xl font-bold text-gray-900">{p.name}</h3>
+
+                  <div className="flex items-center justify-center space-x-2">
+                    <Award className="text-teal-600" size={16} />
+                    <p className="text-sm text-gray-700">{p.title}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow">
             <div className="flex items-center space-x-3 mb-6">

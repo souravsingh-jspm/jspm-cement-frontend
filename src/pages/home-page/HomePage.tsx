@@ -1,5 +1,6 @@
 import { Calendar, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import Slider from "@/components/ui/Slider";
 
 const renderStyledText = (text: string) => {
   return text.split(" ").map((word, index) => {
@@ -31,16 +32,19 @@ const renderStyledText = (text: string) => {
 const HomePage = () => {
   return (
     <>
+      <div className="w-full">
+        <Slider />
+      </div>
       <section
         id="home"
-        className="pt-20 min-h-screen flex items-center bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50 relative overflow-hidden"
+        className=" h-[min-h-screen - 10vh] flex py-10 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50 relative overflow-hidden"
       >
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-teal-400 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  relative z-10">
           <div className="text-center">
             <div className="inline-block mb-6 px-6 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg">
               <p className="text-teal-600 font-semibold">
@@ -114,9 +118,111 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
+        {/* <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div> */}
       </section>
+      <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 w-[100vw] my-3">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            ABOUT JS
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">
+              PM GROUP
+            </span>
+          </h2>{" "}
+          <div
+            className="bg-white rounded-2xl shadow-xl p-6 sm:p-8
+      hover:shadow-2xl transition-shadow
+      text-gray-900
+      text-sm sm:text-lg md:text-xl
+      leading-relaxed tracking-normal
+      break-words
+      text-justify
+      max-w-3xl mx-auto "
+          >
+            JSPM (Jayawant Shikshan Prasarak Mandal) Pune, established in 1998
+            under Prof. Dr. T. J. Sawant's visionary leadership, exemplifies
+            educational excellence. This multidisciplinary institution offers
+            undergraduate, postgraduate, and doctoral programs across
+            Engineering, Management, Pharmacy, Arts & Commerce, Education,
+            Health Sciences, Law, and Computer Applications. With
+            state-of-the-art infrastructure, modern laboratories, and
+            industry-aligned curriculum emphasizing experiential learning, JSPM
+            prepares students for real-world challenges. Beyond academics, it
+            promotes holistic development through extracurricular activities,
+            sports, and cultural events. Its student-centric approach fosters an
+            inclusive environment where every individual thrives. Integrating
+            advanced technology and aligning with national educational policies,
+            JSPM stands as Pune's leading educational institution, shaping
+            tomorrow's leaders.
+          </div>{" "}
+        </div>
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            ABOUT JSPM{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">
+              UNIVERSITY PUNE
+            </span>
+          </h2>{" "}
+          <div
+            className="bg-white rounded-2xl shadow-xl p-6 sm:p-8
+      hover:shadow-2xl transition-shadow
+      text-gray-900
+      text-sm sm:text-lg md:text-xl
+      leading-relaxed tracking-normal
+      break-words
+      text-justify
+      max-w-3xl mx-auto "
+          >
+            JSPM University Pune embodies educational excellence aligned with
+            the National Education Policy (NEP), emphasizing experiential
+            learning through internships, industry projects, field visits, and
+            practical simulations. Our flexible, multidisciplinary curriculum
+            enables students to explore diverse passions while acquiring
+            comprehensive knowledge. We prioritize creativity, innovation, and
+            digital proficiency to prepare students for a dynamic world.
+            Holistic development thrives through extracurricular activities in
+            sports, arts, culture, and community service, nurturing character
+            alongside intellect. Strong industry partnerships provide valuable
+            real-world exposure, while our inclusive environment empowers every
+            student. JSPM University Pune shapes future leaders through
+            transformative, NEP-aligned education that seamlessly integrates
+            academic rigor with practical relevance and social responsibility.
+          </div>{" "}
+        </div>
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            ABOUT SCHOOL OF CIVIL AND{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">
+              ENVIRONMENTAL SCIENCES
+            </span>
+          </h2>{" "}
+          <div
+            className="bg-white rounded-2xl shadow-xl p-6 sm:p-8
+      hover:shadow-2xl transition-shadow
+      text-gray-900
+      text-sm sm:text-lg md:text-xl
+      leading-relaxed tracking-normal
+      break-words
+      text-justify
+      max-w-3xl mx-auto "
+          >
+            Established in 2023, JSPM University Pune's School of Civil and
+            Environmental Sciences offers undergraduate and postgraduate
+            programs, including B.Tech. in Civil Engineering and M.Tech
+            specializations in Construction Management, Transportation,
+            Environmental and Water Resources, and Structural Engineering.
+            Notably, it features Maharashtra's first M.Tech. in Real Estate and
+            Valuation, addressing niche industry demands. The school prioritizes
+            experiential learning through internships, industry projects, and
+            field training, ensuring practical skill development. Strong
+            industry collaborations provide research opportunities and
+            professional exposure. Modern laboratories, smart classrooms, and
+            experienced faculty cultivate innovation, critical thinking, and
+            leadership. Holistic development is enhanced through workshops,
+            seminars, and extracurricular activities, preparing students
+            comprehensively for professional success. initiatives.
+          </div>{" "}
+        </div>
+      </div>
     </>
   );
 };

@@ -12,5 +12,4 @@ const Publications: React.FC = () => {
   );
 };
 
-// Make sure to use export default
 export default Publications;

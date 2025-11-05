@@ -61,7 +61,33 @@ const ConferenceTheme = () => {
             materials and technologies
           </p>
         </div>
-
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            About{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">
+              Conference
+            </span>
+          </h2>
+        </div>
+        <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow my-4 sm:text-xl text-sm  text-gray-900 ">
+          This International Conference aims to address the evolving needs of
+          modern infrastructure by bringing together researchers, academicians,
+          industry professionals, and stakeholders to exchange ideas and
+          innovations in civil engineering. The event will focus on advancements
+          in sustainable construction materials, modern technologies, and best
+          practices across the sector. The themes of the conference include
+          structural engineering, transportation systems, geotechnical
+          innovations, environmental engineering, and the use of digital tools
+          for developing resilient infrastructure. A major highlight is the
+          inclusion of urban development and real estate topics, with sessions
+          on smart cities, land use planning, infrastructure financing, and the
+          latest trends in property valuation and sustainable investment. By
+          fostering collaboration and knowledge-sharing, the conference seeks to
+          inspire innovative solutions and promote interdisciplinary approaches
+          for sustainable infrastructure development. It offers a valuable
+          platform for networking, learning, and shaping the future of civil
+          engineering in a rapidly changing world.
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {themes.map((theme, index) => {
             const Icon = theme.icon;

@@ -1,6 +1,7 @@
 import { FileText, Upload, CheckCircle, AlertCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SUBMIT_FORM_LINK } from "@/constants/appConstants";
+import AccountDetails from "@/components/ui/AccountDetails";
 
 const guidelines = [
   "Papers should be original and not published elsewhere",
@@ -55,6 +56,7 @@ export default function SubmitPaper() {
             community
           </p>
         </div>
+        <AccountDetails />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div className="bg-white rounded-2xl shadow-xl p-8">

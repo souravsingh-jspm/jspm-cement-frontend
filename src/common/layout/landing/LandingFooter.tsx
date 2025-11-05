@@ -82,7 +82,7 @@ export default function LandingFooter() {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="text-teal-400 flex-shrink-0" size={20} />
-                <span className="text-gray-400">+91 XXX XXX XXXX</span>
+                <span className="text-gray-400">+91 87934 88880</span>
               </li>
             </ul>
           </div>

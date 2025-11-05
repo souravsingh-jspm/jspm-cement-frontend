@@ -1,5 +1,6 @@
 import { User, Award, Building2 } from "lucide-react";
 import { useGetKeyNoteSpeakersById } from "@/services/KeyNoteSpeakers";
+import PkSir from "@/assets/Images/Dr.PK.jpg";
 
 const speakers = [
   {
@@ -7,7 +8,7 @@ const speakers = [
     title: "Professor of Civil Engineering",
     institution: "IIT Roorkee",
     expertise: "Transportations Engineering",
-    image: "https://jspmuni.ac.in/images/media_images/Dr.PK.jpeg",
+    image: PkSir,
   },
   // {
   //   name: "Dr. Priya Sharma",
