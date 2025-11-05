@@ -9,12 +9,15 @@ export default function LandingNav() {
     <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center">
+          <Link
+            to="https://jspmuni.ac.in/"
+            className="flex items-center space-x-3"
+          >
+            {/* <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">CE</span>
-            </div>
+            </div> */}
             <div>
-              <h1 className="text-xl font-bold text-gray-800">CEMENT'26</h1>
+              <h1 className="text-xs font-bold text-gray-800">CEMENT'26</h1>
               <p className="text-xs text-gray-600">JSPM University Pune</p>
             </div>
           </Link>
@@ -30,7 +33,7 @@ export default function LandingNav() {
               to="/keynote-speakers"
               className="px-4 py-2 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-all duration-200"
             >
-              Key Note Speakers
+              Keynote Speakers
             </Link>
             <Link
               to="/conference-committee"
@@ -48,13 +51,19 @@ export default function LandingNav() {
               to="/registration"
               className="px-4 py-2 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-all duration-200"
             >
-              Registration
+              Registration Details
             </Link>
             <Link
               to="/important-dates"
               className="px-4 py-2 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-all duration-200"
             >
               Important Dates
+            </Link>
+            <Link
+              to="/publications"
+              className="px-4 py-2 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-all duration-200"
+            >
+              Publications
             </Link>
             <Link
               to="/submit-paper"
@@ -99,43 +108,43 @@ export default function LandingNav() {
         <div className="md:hidden bg-white border-t">
           <div className="px-4 py-2 space-y-1">
             <Link
-              to=""
+              to="/"
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
             >
               Home
             </Link>
             <Link
-              to=""
+              to="/keynote-speakers"
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
             >
-              Key Note Speakers
+              Keynote Speakers
             </Link>
             <Link
-              to=""
+              to="/conference-committee"
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
             >
               Committee
             </Link>
             <Link
-              to=""
+              to="/conference-theme"
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
             >
               Themes
             </Link>
             <Link
-              to=""
+              to="/registration"
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
             >
               Registration
             </Link>
             <Link
-              to=""
+              to="/important-dates"
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
             >
               Important Dates
             </Link>
             <Link
-              to=""
+              to="/submit-paper"
               className="block w-full text-left px-4 py-2 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-lg mt-2"
             >
               Submit Paper

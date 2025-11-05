@@ -1,4 +1,6 @@
 import { FileText, Upload, CheckCircle, AlertCircle } from "lucide-react";
+import { Link } from "react-router-dom";
+import { SUBMIT_FORM_LINK } from "@/constants/appConstants";
 
 const guidelines = [
   "Papers should be original and not published elsewhere",
@@ -117,9 +119,12 @@ export default function SubmitPaper() {
               <p className="mb-6 opacity-90">
                 Upload your research paper to our submission portal
               </p>
-              <button className="px-8 py-4 bg-white text-teal-600 rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:-translate-y-1">
+              <Link
+                to={SUBMIT_FORM_LINK}
+                className="px-8 py-4 bg-white text-teal-600 rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:-translate-y-1"
+              >
                 Submit Paper Now
-              </button>
+              </Link>
               <p className="mt-4 text-sm opacity-80">
                 Submission portal will open soon
               </p>

@@ -7,6 +7,16 @@ import {
   Linkedin,
   Instagram,
 } from "lucide-react";
+const quickLinks = [
+  { label: "Home", path: "/" },
+  { label: "Keynote Speakers", path: "/keynote-speakers" },
+  { label: "Committee", path: "/conference-committee" },
+  { label: "Themes", path: "/conference-theme" },
+  { label: "Registration", path: "/registration" },
+  { label: "Important Dates", path: "/important-dates" },
+];
+
+import { Link } from "react-router-dom";
 
 export default function LandingFooter() {
   return (
@@ -32,32 +42,14 @@ export default function LandingFooter() {
           <div>
             <h4 className="text-lg font-bold mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              {[
-                "Home",
-                "Keynote Speakers",
-                "Committee",
-                "Themes",
-                "Registration",
-                "Important Dates",
-              ].map((link) => (
-                <li key={link}>
-                  <button
-                    onClick={() => {
-                      const id = link.toLowerCase().replace(" ", "-");
-                      document
-                        .getElementById(
-                          id === "keynote-speakers"
-                            ? "speakers"
-                            : id === "important-dates"
-                            ? "dates"
-                            : id
-                        )
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }}
+              {quickLinks.map(({ label, path }) => (
+                <li key={path}>
+                  <Link
+                    to={path}
                     className="text-gray-400 hover:text-teal-400 transition-colors"
                   >
-                    {link}
-                  </button>
+                    {label}
+                  </Link>
                 </li>
               ))}
             </ul>

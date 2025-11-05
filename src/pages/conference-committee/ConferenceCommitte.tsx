@@ -3,37 +3,145 @@ import { Users, Shield, Globe } from "lucide-react";
 const committeeData = {
   organizing: [
     {
-      name: "Prof. Vijay Deshmukh",
-      role: "Chief Patron",
-      affiliation: "JSPM University",
+      name: "Dr. Dipak Jadhav",
     },
     {
-      name: "Dr. Snehal Kulkarni",
-      role: "Conference Chair",
-      affiliation: "Head, Civil Dept.",
+      name: "Dr. Pritam Hait",
     },
     {
-      name: "Dr. Rahul Mehta",
-      role: "Organizing Secretary",
-      affiliation: "JSPM University",
+      name: "Dr. Prashant Sudani",
     },
     {
-      name: "Prof. Anjali Joshi",
-      role: "Treasurer",
-      affiliation: "JSPM University",
+      name: "Dr. Pravin Bhasme",
+    },
+    {
+      name: "Dr. Sagar Turkane",
+    },
+    {
+      name: "Dr. Jaicky Gurnani",
+    },
+    {
+      name: "Mr. Manjunath Changali",
+    },
+    {
+      name: "Mr. Mahesh Lokhande",
+    },
+    {
+      name: "Dr. Pinki Deb",
+    },
+    {
+      name: "Mr. Sharanabasappa Kori",
+    },
+    {
+      name: "Mr. Gokul Dhumal",
+    },
+    {
+      name: "Mr. Azharuddin Humnabad",
+    },
+    {
+      name: "Dr. Tushar Das",
+    },
+    {
+      name: "Dr. Deepak Kolekar",
+    },
+    {
+      name: "Ms. Ankita Turate",
+    },
+    {
+      name: "Ms. Sharayu Kadam",
+    },
+    {
+      name: "Mrs. Preeti Kumari",
     },
   ],
   advisory: [
-    { name: "Dr. S.K. Singh", affiliation: "IIT Delhi" },
-    { name: "Dr. M.R. Rao", affiliation: "NIT Trichy" },
-    { name: "Dr. P.V. Kumar", affiliation: "VJTI Mumbai" },
-    { name: "Dr. A.B. Desai", affiliation: "COEP Pune" },
+    {
+      name: "Prof. Dr. M. S. Ranadive",
+      affiliation: "Professor (Retd.), College of Engineering Pune",
+    },
+    { name: "Dr. Kiran Patil", affiliation: "Professor, NIT Surat" },
+    { name: "Prof. S. Choudhury", affiliation: "Professor, NIT Silchar" },
+    { name: "Prof. AK Mungray", affiliation: "NIT Trichy" },
+    { name: "Prof. A.I. Lashkar", affiliation: "Professor, NIT Silchar" },
+    { name: "Prof. Yogendra Singh", affiliation: "Professor, IIt Roorkee" },
+    { name: "Dr. Laxmikant Yadu", affiliation: "Professor, NIT Raipur" },
+    {
+      name: "Dr. A. S. Sayyed",
+      affiliation: "Professor, Sanjivani College of Engineering Kopargaon",
+    },
+    {
+      name: "Dr. Mukhopaddhyay",
+      affiliation: "Professor (Retd.), College of Engineering Pune",
+    },
+    {
+      name: "Dr. Girish Kulkarni",
+      affiliation: "Professor, Shivaji University Kolhapur",
+    },
+
+    {
+      name: "Dr. Mahesh Chougule",
+      affiliation: "Professor, DKTE Society's Textile & Engineering Institute",
+    },
+
+    {
+      name: "Dr. Popat Kumbhar",
+      affiliation: "Professor, Rajarambapu Institute of Technology",
+    },
+
+    {
+      name: "Dr. G. L. Sivakumar Babu",
+      affiliation: "Retired Professor, IISc Bengaluru",
+    },
+
+    // { name: "", affiliation: "" },
+
+    // { name: "", affiliation: "" },
   ],
   technical: [
-    { name: "Dr. Kiran Patil", affiliation: "JSPM University" },
-    { name: "Prof. Suresh Wagh", affiliation: "JSPM University" },
-    { name: "Dr. Meera Kulkarni", affiliation: "JSPM University" },
-    { name: "Prof. Nitin Bhosale", affiliation: "JSPM University" },
+    {
+      name: "Dr. Sharan Kumar Goudar",
+      affiliation: "Assisant Professor, NIT Calicut",
+    },
+    {
+      name: "Dr. Yashwant Patil",
+      affiliation: "Assistant Professor, Rajarambapu Institute of Technology",
+    },
+    {
+      name: "Dr. Ajim Sutar",
+      affiliation:
+        "Assistant Professor, D. Y. Patil college of engineering and technology, kolhapur",
+    },
+    {
+      name: "Dr. M. V. Shah",
+      affiliation: "Assistant Professor, Gov. L. D. College of Engineering",
+    },
+    {
+      name: "Dr. K. K. Tripathi",
+      affiliation: "Assistant Professor, COEP Tech Pune",
+    },
+    { name: "Dr. P. Das", affiliation: "Assistant Professor, NIT Silchar" },
+    {
+      name: "Dr. Atanu. Sahu",
+      affiliation: "Assistant Professor, NIT Silchar",
+    },
+    {
+      name: "Dr. Sandeep K. Chouksey",
+      affiliation: "Assistant Professor, NIT Raipur",
+    },
+    {
+      name: "Dr. Tarun Rajak",
+      affiliation:
+        "Assistant Professor, Shri Shankaracharya Institute Of Professional Management & Technology, Raipur",
+    },
+    {
+      name: "Dr. Anurag Sharma",
+      affiliation: "Assistant Professor, O. P. Jindal University, Raigarh",
+    },
+    {
+      name: "Dr. Nitin Tiwar",
+      affiliation:
+        "Assistant Professor, Southern Illinois University Carbondale US",
+    },
   ],
 };
 
@@ -73,10 +181,10 @@ const ConferenceCommitte = () => {
                   className="border-l-4 border-teal-500 pl-4 py-2 hover:bg-teal-50 transition-colors rounded-r"
                 >
                   <h4 className="font-semibold text-gray-900">{member.name}</h4>
-                  <p className="text-sm text-teal-600 font-medium">
+                  {/* <p className="text-sm text-teal-600 font-medium">
                     {member.role}
-                  </p>
-                  <p className="text-sm text-gray-600">{member.affiliation}</p>
+                  </p> */}
+                  {/* <p className="text-sm text-gray-600">{member.affiliation}</p> */}
                 </div>
               ))}
             </div>

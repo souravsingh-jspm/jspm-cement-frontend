@@ -1,72 +1,76 @@
 import { Calendar, Clock, FileCheck, Award } from "lucide-react";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 
-// const importantDates = [
-//   {
-//     icon: FileCheck,
-//     event: "Abstract Submission Deadline",
-//     date: "December 15, 2025",
-//     description: "Submit your research abstract for review",
-//   },
-//   {
-//     icon: Clock,
-//     event: "Notification of Abstract Acceptance",
-//     date: "January 10, 2026",
-//     description: "Authors will be notified of abstract status",
-//   },
-//   {
-//     icon: FileCheck,
-//     event: "Full Paper Submission",
-//     date: "February 28, 2026",
-//     description: "Submit complete research paper",
-//   },
-//   {
-//     icon: Award,
-//     event: "Final Acceptance Notification",
-//     date: "March 20, 2026",
-//     description: "Final paper acceptance and review feedback",
-//   },
-//   {
-//     icon: Calendar,
-//     event: "Early Bird Registration Closes",
-//     date: "April 10, 2026",
-//     description: "Last date for discounted registration",
-//   },
-//   {
-//     icon: Calendar,
-//     event: "Regular Registration Closes",
-//     date: "May 15, 2026",
-//     description: "Final registration deadline",
-//   },
-//   {
-//     icon: Award,
-//     event: "Conference Dates",
-//     date: "June 5-7, 2026",
-//     description: "Three days of knowledge sharing and networking",
-//     highlight: true,
-//   },
-// ];
+interface ImportantDate {
+  id_id: number;
+  id_title: string;
+  id_date: string;
+  id_icon: string;
+  id_description: string;
+  highlight?: boolean;
+}
+
+const ICONS: Record<
+  string,
+  React.ComponentType<{ size?: number; className?: string }>
+> = {
+  Calendar,
+  Clock,
+  FileCheck,
+  Award,
+};
 
 const ImportantDate = () => {
-  const [importantDates, setImportantDates] = useState([]);
+  const [importantDates, setImportantDates] = useState<ImportantDate[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const API_URL = "http://127.0.0.1:8000/api/user/importantdate"; // Need to change
-
-  // Fetch all records
-  const fetchDates = async () => {
-    try {
-      const res = await axios.get(API_URL);
-      setImportantDates(res.data);
-    } catch (err) {
-      console.error("Error fetching important dates:", err);
-    }
-  };
+  const API_URL = "http://127.0.0.1:8000/api/user/importantdate";
 
   useEffect(() => {
+    let isMounted = true;
+
+    const fetchDates = async () => {
+      try {
+        const res = await axios.get(API_URL);
+        if (isMounted) {
+          setImportantDates(res.data);
+          setLoading(false);
+        }
+      } catch (err) {
+        if (isMounted) {
+          setError("Failed to fetch important dates");
+          setLoading(false);
+        }
+      }
+    };
+
     fetchDates();
-  }, []);
-  console.log(importantDates, "Sourav singh");
+    return () => {
+      isMounted = false;
+    };
+  }, [API_URL]);
+
+  if (loading)
+    return (
+      <div className="text-center py-20 text-teal-600">
+        <Suspense
+          fallback={
+            <div className="flex justify-center items-center h-[100vh]">
+              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-500"></div>
+            </div>
+          }
+        >
+          <div className="px-2 pt-10 tablet:pt-10 w-full flex flex-col items-center">
+            <div className="w-full"></div>
+          </div>
+        </Suspense>{" "}
+      </div>
+    );
+  if (error)
+    return <div className="text-center py-20 text-red-600">{error}</div>;
+
   return (
     <section id="dates" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,55 +87,58 @@ const ImportantDate = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-teal-500 via-cyan-500 to-teal-500"></div>
-
-            <div className="space-y-8">
-              {importantDates.map((item, index) => {
-                const Icon = item.id_icon;
-                return (
+        <div className="max-w-4xl mx-auto relative">
+          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-teal-500 via-cyan-500 to-teal-500"></div>
+          <div className="space-y-8">
+            {importantDates.map((item) => {
+              const Icon = ICONS[item.id_icon] || Calendar;
+              return (
+                <div
+                  key={item.id_id}
+                  className="relative flex items-start space-x-6"
+                >
                   <div
-                    key={index}
-                    className="relative flex items-start space-x-6"
+                    className={`flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center z-10 ${
+                      item.highlight
+                        ? "bg-gradient-to-br from-amber-400 to-orange-500 shadow-xl"
+                        : "bg-gradient-to-br from-teal-500 to-cyan-600 shadow-lg"
+                    }`}
                   >
-                    <div
-                      className={`flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center z-10 ${
-                        item.highlight
-                          ? "bg-gradient-to-br from-amber-400 to-orange-500 shadow-xl"
-                          : "bg-gradient-to-br from-teal-500 to-cyan-600 shadow-lg"
-                      }`}
-                    >
-                      <Icon className="text-white" size={28} />
-                    </div>
-
-                    <div
-                      className={`flex-1 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 ${
-                        item.highlight
-                          ? "bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300"
-                          : "bg-gradient-to-br from-gray-50 to-teal-50"
-                      }`}
-                    >
-                      <h3
-                        className={`text-xl font-bold mb-2 ${
-                          item.highlight ? "text-amber-900" : "text-gray-900"
-                        }`}
-                      >
-                        {item.id_title}
-                      </h3>
-                      <p
-                        className={`text-lg font-semibold mb-2 ${
-                          item.highlight ? "text-amber-700" : "text-teal-600"
-                        }`}
-                      >
-                        {item.id_date}
-                      </p>
-                      <p className="text-gray-600">{item.id_description}</p>
-                    </div>
+                    <Icon className="text-white" size={28} />
                   </div>
-                );
-              })}
-            </div>
+
+                  <div
+                    className={`flex-1 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 ${
+                      item.highlight
+                        ? "bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300"
+                        : "bg-gradient-to-br from-gray-50 to-teal-50"
+                    }`}
+                  >
+                    <h3
+                      className={`text-xl font-bold mb-2 ${
+                        item.highlight ? "text-amber-900" : "text-gray-900"
+                      }`}
+                    >
+                      {item.id_title}
+                    </h3>
+                    {/* <p
+                      className={`text-lg font-semibold mb-2 ${
+                        item.highlight ? "text-amber-700" : "text-teal-600"
+                      }`}
+                    >
+                      {item.id_date}
+                    </p> */}
+                    <p
+                      className={`text-lg font-semibold mb-2 ${
+                        item.highlight ? "text-amber-700" : "text-teal-600"
+                      }`}
+                    >
+                      {item.id_description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 

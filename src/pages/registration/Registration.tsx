@@ -1,59 +1,53 @@
 import { Users, GraduationCap, Building2, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const registrationCategories = [
-  {
-    icon: GraduationCap,
-    category: "Student",
-    price: "₹2,500",
-    international: "$100",
-    features: [
-      "Conference Kit",
-      "All Sessions Access",
-      "E-Certificate",
-      "Lunch & Refreshments",
-    ],
-  },
+const registrationCategoriesEarlyBird = [
   {
     icon: Users,
-    category: "Academic",
-    price: "₹4,000",
-    international: "$150",
-    features: [
-      "Conference Kit",
-      "All Sessions Access",
-      "Certificate",
-      "Lunch & Refreshments",
-      "Proceedings",
-    ],
+    category: "Faculty/Industry Person",
+    price: "₹5,000",
+    international: "$100",
+    features: ["All Sessions Access", "E-Certificate", "Proceedings"],
   },
+  {
+    icon: GraduationCap,
+    category: "Students/Research Scholars",
+    price: "₹4,000",
+    international: "$60",
+    features: ["All Sessions Access", "E-Certificate", "Proceedings"],
+  },
+
   {
     icon: Building2,
-    category: "Industry Professional",
-    price: "₹6,000",
-    international: "$200",
-    features: [
-      "Conference Kit",
-      "All Sessions Access",
-      "Certificate",
-      "Lunch & Refreshments",
-      "Proceedings",
-      "Networking Dinner",
-    ],
+    category: "Attendee",
+    price: "₹1,000",
+    international: "$25",
+    features: ["All Sessions Access", "E-Certificate", "Proceedings"],
+  },
+];
+
+const registrationNormalCategories = [
+  {
+    icon: Users,
+    category: "Faculty/Industry Person",
+    price: "₹5,500",
+    international: "$120",
+    features: ["All Sessions Access", "E-Certificate", "Proceedings"],
   },
   {
-    icon: Globe,
-    category: "International Delegate",
-    price: "$250",
-    international: "$250",
-    features: [
-      "Conference Kit",
-      "All Sessions Access",
-      "Certificate",
-      "Lunch & Refreshments",
-      "Proceedings",
-      "Networking Dinner",
-      "City Tour",
-    ],
+    icon: GraduationCap,
+    category: "Students/Research Scholars",
+    price: "₹4,500",
+    international: "$75",
+    features: ["All Sessions Access", "E-Certificate", "Proceedings"],
+  },
+
+  {
+    icon: Building2,
+    category: "Attendee",
+    price: "₹2,000",
+    international: "$30",
+    features: ["All Sessions Access", "E-Certificate", "Proceedings"],
   },
 ];
 
@@ -75,9 +69,70 @@ export default function Registration() {
             Choose your registration category and secure your spot at CEMENT'26
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {registrationCategories.map((category, index) => {
+        <div>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 underline">
+            Early{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">
+              Birds
+            </span>
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 rounded-2xl p-3">
+          {registrationCategoriesEarlyBird.map((category, index) => {
+            const Icon = category.icon;
+            return (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              >
+                <div className="bg-gradient-to-r from-teal-500 to-cyan-600 p-6 text-white">
+                  <Icon size={40} className="mb-4" />
+                  <h3 className="text-2xl font-bold mb-2">
+                    {category.category}
+                  </h3>
+                  <div className="space-y-1">
+                    <p className="text-3xl font-bold">{category.price}</p>
+                    {category.international !== category.price && (
+                      <p className="text-sm opacity-90">
+                        International: {category.international}
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <ul className="space-y-3">
+                    {category.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start space-x-2">
+                        <svg
+                          className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        <span className="text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="mt-3">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 underline">
+            Normal{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">
+              Registration
+            </span>
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 rounded-2xl p-3">
+          {registrationNormalCategories.map((category, index) => {
             const Icon = category.icon;
             return (
               <div
@@ -160,9 +215,12 @@ export default function Registration() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <button className="px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl hover:from-teal-600 hover:to-cyan-700 transition-all duration-200 transform hover:-translate-y-1">
-              Register Now
-            </button>
+            <Link
+              to="/submit-paper"
+              className="px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl hover:from-teal-600 hover:to-cyan-700 transition-all duration-200 transform hover:-translate-y-1"
+            >
+              Submit Now
+            </Link>
           </div>
         </div>
 

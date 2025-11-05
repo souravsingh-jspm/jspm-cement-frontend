@@ -8,10 +8,8 @@ import "./App.css";
 
 function App() {
   const router = createBrowserRouter([
-    // 👤 Public / User routes
     ...routes,
 
-    // 🔐 Admin routes
     {
       path: "/login",
       element: <SignIn />,
@@ -25,10 +23,8 @@ function App() {
       ),
       children: [
         {
-          index: true, // default admin page
           element: <ImportantDatePage />,
         },
-        // add more admin child routes here
       ],
     },
   ]);

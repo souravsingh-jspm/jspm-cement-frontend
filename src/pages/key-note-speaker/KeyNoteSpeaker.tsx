@@ -1,39 +1,38 @@
 import { User, Award, Building2 } from "lucide-react";
-
 import { useGetKeyNoteSpeakersById } from "@/services/KeyNoteSpeakers";
+
 const speakers = [
   {
-    name: "Dr. Rajesh Kumar",
+    name: "Dr. Praveen Kumar",
     title: "Professor of Civil Engineering",
-    institution: "IIT Bombay",
-    expertise: "Sustainable Construction Materials",
-    image:
-      "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400",
+    institution: "IIT Roorkee",
+    expertise: "Transportations Engineering",
+    image: "https://jspmuni.ac.in/images/media_images/Dr.PK.jpeg",
   },
-  {
-    name: "Dr. Priya Sharma",
-    title: "Senior Research Scientist",
-    institution: "CSIR-SERC",
-    expertise: "Smart Building Technologies",
-    image:
-      "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=400",
-  },
-  {
-    name: "Dr. Amit Patel",
-    title: "Director, Infrastructure Division",
-    institution: "L&T Construction",
-    expertise: "Advanced Concrete Technologies",
-    image:
-      "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400",
-  },
-  {
-    name: "Dr. Sunita Reddy",
-    title: "Head of Department",
-    institution: "NIT Warangal",
-    expertise: "Nanomaterials in Construction",
-    image:
-      "https://images.pexels.com/photos/3831645/pexels-photo-3831645.jpeg?auto=compress&cs=tinysrgb&w=400",
-  },
+  // {
+  //   name: "Dr. Priya Sharma",
+  //   title: "Senior Research Scientist",
+  //   institution: "CSIR-SERC",
+  //   expertise: "Smart Building Technologies",
+  //   image:
+  //     "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=400",
+  // },
+  // // {
+  //   name: "Dr. Amit Patel",
+  //   title: "Director, Infrastructure Division",
+  //   institution: "L&T Construction",
+  //   expertise: "Advanced Concrete Technologies",
+  //   image:
+  //     "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400",
+  // },
+  // {
+  //   name: "Dr. Sunita Reddy",
+  //   title: "Head of Department",
+  //   institution: "NIT Warangal",
+  //   expertise: "Nanomaterials in Construction",
+  //   image:
+  //     "https://images.pexels.com/photos/3831645/pexels-photo-3831645.jpeg?auto=compress&cs=tinysrgb&w=400",
+  // },
 ];
 
 const KeyNoteSpeaker = () => {
@@ -55,17 +54,14 @@ const KeyNoteSpeaker = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* <div className="grid grid-cols-1 justify-center w-[20vw]">
           {speakers.map((speaker, index) => (
-            <div
-              key={index}
-              className="group bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-            >
-              <div className="aspect-square overflow-hidden bg-gradient-to-br from-teal-200 to-cyan-200">
+            <div key={index} className="">
+              <div className="">
                 <img
                   src={speaker.image}
                   alt={speaker.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="h-[50vh] object-contain"
                 />
               </div>
               <div className="p-6">
@@ -102,6 +98,40 @@ const KeyNoteSpeaker = () => {
               </div>
             </div>
           ))}
+        </div> */}
+
+        <div className="flex justify-center py-10">
+          <div className="w-[500px] bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl shadow-lg overflow-hidden text-center">
+            {/* Image */}
+            <img
+              src={speakers[0].image}
+              alt={speakers[0].name}
+              className="w-full h-[50vh] object-contain bg-white"
+            />
+
+            {/* Details */}
+            <div className="p-6 space-y-3">
+              <h3 className="text-2xl font-bold text-gray-900">
+                {speakers[0].name}
+              </h3>
+              <div className="flex items-center justify-center space-x-2">
+                <Award className="text-teal-600" size={16} />
+                <p className="text-sm text-gray-700">{speakers[0].title}</p>
+              </div>
+              <div className="flex items-center justify-center space-x-2">
+                <Building2 className="text-teal-600" size={16} />
+                <p className="text-sm text-gray-700">
+                  {speakers[0].institution}
+                </p>
+              </div>
+              <div className="flex items-center justify-center space-x-2">
+                <User className="text-teal-600" size={16} />
+                <p className="text-sm text-gray-600 italic">
+                  {speakers[0].expertise}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="mt-12 text-center">

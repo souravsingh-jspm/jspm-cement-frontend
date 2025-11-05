@@ -5,6 +5,7 @@ export const FRONTEND_ROUTES = {
   CONFERENCE_COMMITTEE: "/conference-committee",
   CONFERENCE_THEME: "/conference-theme",
   IMPORTANT_DATES: "/important-dates",
+  PUBLICATIONS: "/publications",
   REGISTRATION: "/registration",
   SUBMIT_PAPER: "/submit-paper",
 };
