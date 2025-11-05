@@ -32,7 +32,7 @@ const renderStyledText = (text: string) => {
 const HomePage = () => {
   return (
     <>
-      <div className="w-full">
+      <div className="">
         <Slider />
       </div>
       <section
@@ -120,7 +120,7 @@ const HomePage = () => {
         </div>
         {/* <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div> */}
       </section>
-      <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 w-[100vw] my-3">
+      <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 my-3">
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
             ABOUT JS

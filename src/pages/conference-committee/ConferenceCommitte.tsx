@@ -4,6 +4,9 @@ import FounderSecreatary from "@/assets/Images/CommitteeImages/Founder Secretary
 import Presedent from "@/assets/Images/CommitteeImages/Presedent.png";
 import ViceChancellor from "@/assets/Images/CommitteeImages/Vice Chancellor.png";
 import Dean from "@/assets/Images/CommitteeImages/Dean.png";
+import DIRECTOR from "@/assets/Images/CommitteeImages/Aniket Patil.png";
+import OCCHIRAG from "@/assets/Images/CommitteeImages/Chirag Chaware.png";
+import OCNIKITA from "@/assets/Images/CommitteeImages/Nikita Bhagat.jpg";
 
 const CHIEF_PATRON = [
   {
@@ -27,6 +30,28 @@ const PATRON = [
     name: "Prof. R. S. Deshpande",
     title: "Dean, FST, JSPM University Pune",
     image: Dean,
+  },
+];
+
+const DIRECTOR1 = [
+  {
+    name: "Dr. Aniket D. Patil",
+    title:
+      "Director (I/C), School of Civil & Enviromental Sciences, JSPM University Pune",
+    image: DIRECTOR,
+  },
+];
+
+const ORGINIZING_CHAIRS = [
+  {
+    name: "Dr. Nikita Bhagat",
+    title: "Assistant Professor,SCES, JSPM University Pune",
+    image: OCNIKITA,
+  },
+  {
+    name: "Mr. Chirag Chaware",
+    title: "Assistant Professor,SCES, JSPM University Pune",
+    image: OCCHIRAG,
   },
 ];
 const committeeData = {
@@ -262,32 +287,91 @@ const ConferenceCommitte = () => {
             ))}
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center">
-                <Users className="text-white" size={24} />
+
+        <div className="my-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-6 max-w-7xl mx-auto">
+            {/* Left Column — CONVENER */}
+            <div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6 underline text-center">
+                CONV
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">
+                  ENER
+                </span>
+              </h2>
+
+              <div className="flex justify-center">
+                {DIRECTOR1.map((cp, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-2xl shadow-lg overflow-hidden text-center transform hover:-translate-y-2 transition-all duration-300 w-full max-w-sm"
+                  >
+                    {/* Image container for consistent size */}
+                    <div className="w-full h-64 sm:h-72 bg-gray-50 flex items-center justify-center">
+                      <img
+                        src={cp.image}
+                        alt={cp.name}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+
+                    {/* Details */}
+                    <div className="p-6 space-y-3">
+                      <h3 className="text-2xl font-bold text-gray-900">
+                        {cp.name}
+                      </h3>
+                      <div className="flex items-center justify-center space-x-2">
+                        <Award className="text-teal-600" size={16} />
+                        <p className="text-sm text-gray-700">{cp.title}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">
-                Organizing Committee
-              </h3>
             </div>
-            <div className="space-y-4">
-              {committeeData.organizing.map((member, index) => (
-                <div
-                  key={index}
-                  className="border-l-4 border-teal-500 pl-4 py-2 hover:bg-teal-50 transition-colors rounded-r"
-                >
-                  <h4 className="font-semibold text-gray-900">{member.name}</h4>
-                  {/* <p className="text-sm text-teal-600 font-medium">
-                    {member.role}
-                  </p> */}
-                  {/* <p className="text-sm text-gray-600">{member.affiliation}</p> */}
-                </div>
-              ))}
+
+            {/* Right Column — ORGANIZING CHAIRS */}
+            <div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6 underline text-center">
+                ORGANI
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">
+                  ZING CHAIRS
+                </span>
+              </h2>
+
+              {/* Responsive grid of chairs */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center">
+                {ORGINIZING_CHAIRS.map((cp, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-2xl shadow-lg overflow-hidden text-center transform hover:-translate-y-2 transition-all duration-300 w-full max-w-sm"
+                  >
+                    {/* Uniform image container */}
+                    <div className="w-full h-64 sm:h-72 bg-gray-50 flex items-center justify-center">
+                      <img
+                        src={cp.image}
+                        alt={cp.name}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+
+                    {/* Details */}
+                    <div className="p-6 space-y-3">
+                      <h3 className="text-2xl font-bold text-gray-900">
+                        {cp.name}
+                      </h3>
+                      <div className="flex items-center justify-center space-x-2">
+                        <Award className="text-teal-600" size={16} />
+                        <p className="text-sm text-gray-700">{cp.title}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
+        </div>
 
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow">
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
@@ -327,6 +411,31 @@ const ConferenceCommitte = () => {
                 >
                   <h4 className="font-semibold text-gray-900">{member.name}</h4>
                   <p className="text-sm text-gray-600">{member.affiliation}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow">
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center">
+                <Users className="text-white" size={24} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900">
+                Organizing Committee
+              </h3>
+            </div>
+            <div className="space-y-4">
+              {committeeData.organizing.map((member, index) => (
+                <div
+                  key={index}
+                  className="border-l-4 border-teal-500 pl-4 py-2 hover:bg-teal-50 transition-colors rounded-r"
+                >
+                  <h4 className="font-semibold text-gray-900">{member.name}</h4>
+                  {/* <p className="text-sm text-teal-600 font-medium">
+                    {member.role}
+                  </p> */}
+                  {/* <p className="text-sm text-gray-600">{member.affiliation}</p> */}
                 </div>
               ))}
             </div>
