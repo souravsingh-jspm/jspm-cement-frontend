@@ -21,11 +21,7 @@ function App() {
           <AdminLayout />
         </ProtectedRoute>
       ),
-      children: [
-        {
-          element: <ImportantDatePage />,
-        },
-      ],
+      children: [{ index: true, element: <ImportantDatePage /> }],
     },
   ]);
 
