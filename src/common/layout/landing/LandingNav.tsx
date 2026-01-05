@@ -1,7 +1,8 @@
 import { FileText } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import logo from "@/assets/Icons/JSPM-logo.svg";
+import "./Landing.css";
 export default function LandingNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -17,8 +18,7 @@ export default function LandingNav() {
               <span className="text-white font-bold text-xl">CE</span>
             </div> */}
             <div>
-              <h1 className="text-xs font-bold text-gray-800">CEMENT'26</h1>
-              <p className="text-xs text-gray-600">JSPM University Pune</p>
+              <img src={logo} className="university-logo" />
             </div>
           </Link>
 

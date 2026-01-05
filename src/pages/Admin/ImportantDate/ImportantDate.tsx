@@ -22,7 +22,7 @@ const ImportantDatePage: React.FC = () => {
   });
   const [editingId, setEditingId] = useState<number | null>(null);
 
-  const API_URL = BASE_URL + "user/importantdate"; // Need to change
+  const API_URL = BASE_URL + "user/importantdates"; // Need to change
 
   // Fetch all records
   const fetchDates = async () => {
@@ -48,7 +48,7 @@ const ImportantDatePage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      if (editingId) {
+      if (editingId !== null) {
         await axios.put(`${API_URL}/${editingId}`, formData);
         setEditingId(null);
       } else {

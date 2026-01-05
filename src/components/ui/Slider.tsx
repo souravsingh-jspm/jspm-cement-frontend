@@ -1,8 +1,8 @@
 import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import img3 from "@/assets/Images/UniversityImages/left.jpg";
-import img2 from "@/assets/Images/UniversityImages/center.jpg";
-import img1 from "@/assets/Images/UniversityImages/right.jpg";
+import img3 from "@/assets/Images/UniversityImages/left.png";
+import img2 from "@/assets/Images/UniversityImages/center.png";
+import img1 from "@/assets/Images/UniversityImages/right.png";
 
 const fadeImages = [
   {

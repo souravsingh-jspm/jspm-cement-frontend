@@ -1,14 +1,10 @@
 import { Calendar, Clock, FileCheck, Award } from "lucide-react";
-import axios from "axios";
-import { useState, useEffect, Suspense } from "react";
-import { BASE_URL } from "@/constants/appConstants";
 
 interface ImportantDate {
   id_id: number;
   id_title: string;
-  id_date: string;
-  id_icon: string;
   id_description: string;
+  id_icon: string;
   highlight?: boolean;
 }
 
@@ -22,56 +18,36 @@ const ICONS: Record<
   Award,
 };
 
+const importantDates: ImportantDate[] = [
+  {
+    id_id: 1,
+    id_title: "Last Date for Submission of Full-Length Paper",
+    id_description: "15th January 2026",
+    id_icon: "FileCheck",
+    highlight: true,
+  },
+  {
+    id_id: 2,
+    id_title: "Acceptance Notification",
+    id_description: "20th January 2026",
+    id_icon: "Award",
+    highlight: true,
+  },
+  {
+    id_id: 3,
+    id_title: "Early Bird Registration",
+    id_description: "20th January 2026 to 30th January 2026",
+    id_icon: "Calendar",
+  },
+  {
+    id_id: 4,
+    id_title: "Late Registration",
+    id_description: "31st January 2026 onwards",
+    id_icon: "Clock",
+  },
+];
+
 const ImportantDate = () => {
-  const [importantDates, setImportantDates] = useState<ImportantDate[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  const API_URL = BASE_URL + "user/importantdate";
-
-  useEffect(() => {
-    let isMounted = true;
-
-    const fetchDates = async () => {
-      try {
-        const res = await axios.get(API_URL);
-        if (isMounted) {
-          setImportantDates(res.data);
-          setLoading(false);
-        }
-      } catch (err) {
-        if (isMounted) {
-          setError("Failed to fetch important dates");
-          setLoading(false);
-        }
-      }
-    };
-
-    fetchDates();
-    return () => {
-      isMounted = false;
-    };
-  }, [API_URL]);
-
-  if (loading)
-    return (
-      <div className="text-center py-20 text-teal-600">
-        <Suspense
-          fallback={
-            <div className="flex justify-center items-center h-[100vh]">
-              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-500"></div>
-            </div>
-          }
-        >
-          <div className="px-2 pt-10 tablet:pt-10 w-full flex flex-col items-center">
-            <div className="w-full"></div>
-          </div>
-        </Suspense>{" "}
-      </div>
-    );
-  if (error)
-    return <div className="text-center py-20 text-red-600">{error}</div>;
-
   return (
     <section id="dates" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,15 +60,17 @@ const ImportantDate = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Mark your calendar with these crucial deadlines and dates for
-            CEMENT'26
+            CEMENT&apos;26
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto relative">
           <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-teal-500 via-cyan-500 to-teal-500"></div>
+
           <div className="space-y-8">
             {importantDates.map((item) => {
               const Icon = ICONS[item.id_icon] || Calendar;
+
               return (
                 <div
                   key={item.id_id}
@@ -122,15 +100,9 @@ const ImportantDate = () => {
                     >
                       {item.id_title}
                     </h3>
-                    {/* <p
-                      className={`text-lg font-semibold mb-2 ${
-                        item.highlight ? "text-amber-700" : "text-teal-600"
-                      }`}
-                    >
-                      {item.id_date}
-                    </p> */}
+
                     <p
-                      className={`text-lg font-semibold mb-2 ${
+                      className={`text-lg font-semibold ${
                         item.highlight ? "text-amber-700" : "text-teal-600"
                       }`}
                     >
