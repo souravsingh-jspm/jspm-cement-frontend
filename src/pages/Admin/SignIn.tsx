@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { LogIn } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { isSessionValid } from "@/utils/authHelpers";
-import { API_URL } from "@/constants/appConstants";
+import { BASE_URL } from "@/constants/appConstants";
 
-const url = API_URL + "admin/login";
+const url = BASE_URL + "admin/login";
 
 export default function SignIn() {
   const navigate = useNavigate();

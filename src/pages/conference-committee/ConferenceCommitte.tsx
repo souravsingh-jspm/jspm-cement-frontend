@@ -1,4 +1,4 @@
-import { Users, Shield, Globe, User, Award, Building2 } from "lucide-react";
+import { Users, Shield, Globe, Award } from "lucide-react";
 
 import FounderSecreatary from "@/assets/Images/CommitteeImages/Founder Secretary.png";
 import Presedent from "@/assets/Images/CommitteeImages/Presedent.png";

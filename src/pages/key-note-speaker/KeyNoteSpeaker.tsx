@@ -1,5 +1,4 @@
 import { User, Award, Building2 } from "lucide-react";
-import { useGetKeyNoteSpeakersById } from "@/services/KeyNoteSpeakers";
 import PkSir from "@/assets/Images/Dr.PK.jpg";
 
 const speakers = [
@@ -37,8 +36,6 @@ const speakers = [
 ];
 
 const KeyNoteSpeaker = () => {
-  const { data: keyNoteSpeaker } = useGetKeyNoteSpeakersById("");
-
   return (
     <section id="speakers" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

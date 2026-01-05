@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PencilIcon from "@/assets/Icons/PencilIcon";
 import TrashIcon from "@/assets/Icons/TrashIcon";
 import axios from "axios";
+import { BASE_URL } from "@/constants/appConstants";
 
 interface ImportantDate {
   id_id: number;
@@ -21,7 +22,7 @@ const ImportantDatePage: React.FC = () => {
   });
   const [editingId, setEditingId] = useState<number | null>(null);
 
-  const API_URL = "http://127.0.0.1:8000/api/user/importantdate"; // Need to change
+  const API_URL = BASE_URL + "user/importantdate"; // Need to change
 
   // Fetch all records
   const fetchDates = async () => {

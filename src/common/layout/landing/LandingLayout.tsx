@@ -21,7 +21,6 @@
 
 // export default LandingLayout;
 
-import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import LandingFoot from "./LandingFooter";
 import LandingNav from "./LandingNav";

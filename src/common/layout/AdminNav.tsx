@@ -1,11 +1,8 @@
 import { FileText } from "lucide-react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { clearSession } from "@/utils/authHelpers";
 
 export default function LandingNav() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

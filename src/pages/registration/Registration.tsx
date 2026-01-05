@@ -1,4 +1,4 @@
-import { Users, GraduationCap, Building2, Globe } from "lucide-react";
+import { Users, GraduationCap, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const registrationCategoriesEarlyBird = [

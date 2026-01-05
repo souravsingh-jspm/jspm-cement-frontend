@@ -1,4 +1,4 @@
-import { API_URL } from "@/constants/appConstants";
+import { BASE_URL } from "@/constants/appConstants";
 import axios, { AxiosResponse } from "axios";
 
 export interface ApiResponse<T> {
@@ -9,7 +9,7 @@ export interface ApiResponse<T> {
 }
 
 const axiosInstance = axios.create({
-  baseURL: API_URL,
+  baseURL: BASE_URL,
 });
 
 export const getApi = async <Response, Params>(url: string, params: Params) => {

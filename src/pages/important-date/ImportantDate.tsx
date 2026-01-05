@@ -1,6 +1,7 @@
 import { Calendar, Clock, FileCheck, Award } from "lucide-react";
 import axios from "axios";
 import { useState, useEffect, Suspense } from "react";
+import { BASE_URL } from "@/constants/appConstants";
 
 interface ImportantDate {
   id_id: number;
@@ -26,7 +27,7 @@ const ImportantDate = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const API_URL = "http://127.0.0.1:8000/api/user/importantdate";
+  const API_URL = BASE_URL + "user/importantdate";
 
   useEffect(() => {
     let isMounted = true;

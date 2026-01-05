@@ -1,7 +1,6 @@
 import { FileText } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import AccountDetails from "@/components/ui/AccountDetails";
 
 export default function LandingNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
