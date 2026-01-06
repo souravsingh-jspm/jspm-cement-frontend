@@ -1,5 +1,4 @@
 import { Users, GraduationCap, Building2 } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const registrationCategoriesEarlyBird = [
   {
@@ -215,12 +214,14 @@ export default function Registration() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <Link
-              to="/submit-paper"
+            <a
+              href="https://forms.gle/pf3DxbL2jkN53vTQ6"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl hover:from-teal-600 hover:to-cyan-700 transition-all duration-200 transform hover:-translate-y-1"
             >
-              Submit Now
-            </Link>
+              Register Now
+            </a>
           </div>
         </div>
 

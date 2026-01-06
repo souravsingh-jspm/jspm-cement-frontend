@@ -93,20 +93,40 @@ export default function LandingFooter() {
             <h4 className="text-lg font-bold mb-6">Follow Us</h4>
             <div className="flex space-x-4 mb-6">
               {[
-                { icon: Facebook, label: "Facebook" },
-                { icon: Twitter, label: "Twitter" },
-                { icon: Linkedin, label: "LinkedIn" },
-                { icon: Instagram, label: "Instagram" },
-              ].map(({ icon: Icon, label }) => (
-                <button
+                {
+                  icon: Facebook,
+                  label: "Facebook",
+                  url: "https://surl.li/kjhswc",
+                },
+                {
+                  icon: Twitter,
+                  label: "Twitter",
+                  url: "https://surl.li/jyflkt",
+                },
+                {
+                  icon: Linkedin,
+                  label: "LinkedIn",
+                  url: "https://surl.lu/ojpvab",
+                },
+                {
+                  icon: Instagram,
+                  label: "Instagram",
+                  url: "https://surl.li/hlehog",
+                },
+              ].map(({ icon: Icon, label, url }) => (
+                <a
                   key={label}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gradient-to-br hover:from-teal-500 hover:to-cyan-600 transition-all duration-200 transform hover:-translate-y-1"
                 >
                   <Icon size={20} />
-                </button>
+                </a>
               ))}
             </div>
+
             <p className="text-gray-400 text-sm leading-relaxed">
               Stay updated with the latest news and announcements about
               CEMENT'26
