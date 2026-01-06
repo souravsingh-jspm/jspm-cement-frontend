@@ -7,6 +7,8 @@ import {
   Linkedin,
   Instagram,
 } from "lucide-react";
+import logo from "@/assets/Icons/JSPM-logo.svg";
+
 const quickLinks = [
   { label: "Home", path: "/" },
   { label: "Keynote Speakers", path: "/keynote-speakers" },
@@ -24,12 +26,12 @@ export default function LandingFooter() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">CE</span>
+            <div className="flex items-center space-x-3 mb-6 bg-white p-2">
+              <div className="">
+                <img src={logo} alt="Univesity logo" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">CEMENT'26</h3>
+                <h3 className="text-xl font-bold text-black">CEMENT'26</h3>
                 <p className="text-sm text-gray-400">JSPM University</p>
               </div>
             </div>
@@ -74,10 +76,10 @@ export default function LandingFooter() {
               <li className="flex items-center space-x-3">
                 <Mail className="text-teal-400 flex-shrink-0" size={20} />
                 <a
-                  href="mailto:cement2026@jspm.edu.in"
+                  href="mailto:conference.sces@jspmuni.ac.in"
                   className="text-gray-400 hover:text-teal-400 transition-colors"
                 >
-                  cement2026@jspm.edu.in
+                  conference.sces@jspmuni.ac.in
                 </a>
               </li>
               <li className="flex items-center space-x-3">

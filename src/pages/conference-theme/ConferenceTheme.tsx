@@ -1,50 +1,64 @@
-import { Hammer, Lightbulb, Leaf, Building, Zap, Recycle } from "lucide-react";
+import {
+  Hammer,
+  Lightbulb,
+  Leaf,
+  Building,
+  Zap,
+  Recycle,
+  Map,
+} from "lucide-react";
 
 const themes = [
   {
     icon: Hammer,
-    title: "Advanced Construction Materials",
+    title: "Advanced Structural Engineering & Materials",
     description:
-      "Innovative materials including high-performance concrete, fiber-reinforced composites, and smart materials",
+      "Modern structural systems and materials including HPC, UHPC, self-healing and nano materials, smart structures, seismic and wind-resistant design, structural health monitoring (SHM), retrofitting, and performance-based design.",
     color: "from-teal-500 to-cyan-600",
   },
   {
     icon: Lightbulb,
-    title: "Nanotechnology in Construction",
+    title: "Modern Construction & Project Management",
     description:
-      "Application of nanomaterials for enhanced durability, strength, and sustainability in civil engineering",
+      "Innovative construction practices using BIM, AI, IoT, robotics, 3D printing, modular and lean construction. Covers project planning, risk management, smart contracts, and PPP models for improved efficiency and quality.",
     color: "from-cyan-500 to-blue-600",
   },
   {
-    icon: Leaf,
-    title: "Sustainable & Green Materials",
-    description:
-      "Eco-friendly construction materials, recycled aggregates, and carbon-neutral building solutions",
-    color: "from-green-500 to-teal-600",
-  },
-  {
-    icon: Building,
-    title: "Smart Infrastructure",
-    description:
-      "IoT-enabled structures, self-healing materials, and intelligent monitoring systems",
-    color: "from-blue-500 to-teal-600",
-  },
-  {
     icon: Zap,
-    title: "Energy-Efficient Technologies",
+    title: "Transportation Infrastructure & Mobility Solutions",
     description:
-      "Thermal insulation materials, phase-change materials, and energy-harvesting building components",
+      "Advanced pavement technologies and sustainable mobility systems including smart highways, intelligent transportation systems (ITS), EV infrastructure, traffic modelling, and renewable energy integration for urban and rural transport.",
     color: "from-amber-500 to-orange-600",
   },
   {
-    icon: Recycle,
-    title: "Waste Utilization",
+    icon: Building,
+    title: "Geotechnical Engineering & Ground Improvement",
     description:
-      "Industrial waste in construction, circular economy approaches, and sustainable resource management",
+      "Ground improvement and underground construction technologies including soil stabilization, geosynthetics, foundation systems, seismic site analysis, tunnelling, and geotechnical monitoring for safe infrastructure development.",
+    color: "from-blue-500 to-teal-600",
+  },
+  {
+    icon: Leaf,
+    title: "Environmental Engineering & Water Systems",
+    description:
+      "Resilient and climate-adaptive environmental infrastructure covering wastewater treatment, hydrological modelling, stormwater management, integrated water resources management (IWRM), flood control, groundwater recharge, and circular water economy.",
+    color: "from-green-500 to-teal-600",
+  },
+  {
+    icon: Map,
+    title: "Urban Planning, Real Estate & Smart Infrastructure",
+    description:
+      "Integration of urban planning, real estate, and smart technologies for sustainable cities. Includes smart city frameworks, GIS-based planning, real estate valuation, ICT-enabled services, RERA compliance, and resilient urban design.",
+    color: "from-indigo-500 to-blue-600",
+  },
+  {
+    icon: Recycle,
+    title: "Sustainable & Novel Material Characterization",
+    description:
+      "Development and characterization of sustainable construction materials such as fly ash, GGBS, geopolymers, and bio-concrete. Includes NDT, advanced techniques (XRD, SEM, FTIR), life cycle analysis, and environmental impact assessment.",
     color: "from-emerald-500 to-green-600",
   },
 ];
-
 const ConferenceTheme = () => {
   return (
     <section id="themes" className="py-20 bg-white">
@@ -69,7 +83,15 @@ const ConferenceTheme = () => {
             </span>
           </h2>
         </div>
-        <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow my-4 sm:text-xl text-sm  text-gray-900 ">
+        <div
+          className="bg-white rounded-2xl shadow-xl p-6 sm:p-8
+      hover:shadow-2xl transition-shadow
+      text-gray-900
+      text-sm sm:text-lg md:text-xl
+      leading-relaxed tracking-normal
+      break-words
+      text-justify mx-auto mb-4"
+        >
           This International Conference aims to address the evolving needs of
           modern infrastructure by bringing together researchers, academicians,
           industry professionals, and stakeholders to exchange ideas and
