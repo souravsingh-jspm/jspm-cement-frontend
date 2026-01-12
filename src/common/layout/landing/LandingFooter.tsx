@@ -32,7 +32,6 @@ export default function LandingFooter() {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-black">CEMENT'26</h3>
-                <p className="text-sm text-gray-400">JSPM University</p>
               </div>
             </div>
             <p className="text-gray-400 leading-relaxed">

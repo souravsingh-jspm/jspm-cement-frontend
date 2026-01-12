@@ -3,13 +3,18 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/Icons/JSPM-logo.svg";
 import "./Landing.css";
+
+const navLinkClass =
+  "px-2 py-2 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-all duration-200";
+
+
 export default function LandingNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-md z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-25">
           <Link
             to="https://jspmuni.ac.in/"
             className="flex items-center space-x-3"
@@ -17,51 +22,47 @@ export default function LandingNav() {
             {/* <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">CE</span>
             </div> */}
-            <div>
+            <div className="flex items-center">
               <img src={logo} className="university-logo" />
             </div>
           </Link>
 
-          <div className="hidden md:flex items-center space-x-1">
-            <Link
-              to="/"
-              className="px-4 py-2 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-all duration-200"
-            >
-              Home
-            </Link>
+          <div className="hidden md:flex items-center space-x-1 text-sm lg:text-base">
+            <Link to="/" className={navLinkClass}>Home</Link>
+
             <Link
               to="/keynote-speakers"
-              className="px-4 py-2 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-all duration-200"
+              className={navLinkClass}
             >
               Keynote Speakers
             </Link>
             <Link
               to="/conference-committee"
-              className="px-4 py-2 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-all duration-200"
+              className={navLinkClass}
             >
               Committee
             </Link>
             <Link
               to="/conference-theme"
-              className="px-4 py-2 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-all duration-200"
+              className={navLinkClass}
             >
               Themes
             </Link>
             <Link
               to="/registration"
-              className="px-4 py-2 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-all duration-200"
+              className={navLinkClass}
             >
               Registration Details
             </Link>
             <Link
               to="/important-dates"
-              className="px-4 py-2 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-all duration-200"
+              className={navLinkClass}
             >
               Important Dates
             </Link>
             <Link
               to="/publications"
-              className="px-4 py-2 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-all duration-200"
+              className={navLinkClass}
             >
               Publications
             </Link>
@@ -106,46 +107,46 @@ export default function LandingNav() {
 
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t">
-          <div className="px-4 py-2 space-y-1">
+          <div className="px-2 py-2 space-y-1">
             <Link
               to="/"
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
+              className="block w-full text-left px-2 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
             >
               Home
             </Link>
             <Link
               to="/keynote-speakers"
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
+              className="block w-full text-left px-2 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
             >
               Keynote Speakers
             </Link>
             <Link
               to="/conference-committee"
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
+              className="block w-full text-left px-2 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
             >
               Committee
             </Link>
             <Link
               to="/conference-theme"
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
+              className="block w-full text-left px-2 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
             >
               Themes
             </Link>
             <Link
               to="/registration"
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
+              className="block w-full text-left px-2 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
             >
               Registration
             </Link>
             <Link
               to="/important-dates"
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
+              className="block w-full text-left px-2 py-2 text-gray-700 hover:bg-teal-50 rounded-lg"
             >
               Important Dates
             </Link>
             <Link
               to="/submit-paper"
-              className="block w-full text-left px-4 py-2 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-lg mt-2"
+              className="block w-full text-left px-2 py-2 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-lg mt-2"
             >
               Submit Paper
             </Link>

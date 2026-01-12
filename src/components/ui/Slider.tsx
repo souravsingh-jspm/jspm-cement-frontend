@@ -21,11 +21,14 @@ const fadeImages = [
 
 const SlideShow = () => {
   return (
-    <div className="slide-container">
+    <div style={{marginTop: "6rem"} } className="slide-container">
       <Fade>
         {fadeImages.map((fadeImage, index) => (
           <div key={index}>
-            <img style={{ width: "100%" }} src={fadeImage.url} />
+            <img
+              className="w-[100vw] object-contain"
+              src={fadeImage.url}
+            />
           </div>
         ))}
       </Fade>

@@ -1,38 +1,23 @@
 import { User, Award, Building2 } from "lucide-react";
-import PkSir from "@/assets/Images/Dr.PK.jpg";
+import Img1 from "@/assets/Images/Image1.png";
+import Img2  from "@/assets/Images/Image2.png";
 
-const speakers = [
+const speakers: any = [
   {
     name: "Dr. Praveen Kumar",
     title: "Professor of Civil Engineering",
     institution: "IIT Roorkee",
     expertise: "Transportations Engineering",
-    image: PkSir,
+    image: Img1,
   },
-  // {
-  //   name: "Dr. Priya Sharma",
-  //   title: "Senior Research Scientist",
-  //   institution: "CSIR-SERC",
-  //   expertise: "Smart Building Technologies",
-  //   image:
-  //     "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=400",
-  // },
-  // // {
-  //   name: "Dr. Amit Patel",
-  //   title: "Director, Infrastructure Division",
-  //   institution: "L&T Construction",
-  //   expertise: "Advanced Concrete Technologies",
-  //   image:
-  //     "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400",
-  // },
-  // {
-  //   name: "Dr. Sunita Reddy",
-  //   title: "Head of Department",
-  //   institution: "NIT Warangal",
-  //   expertise: "Nanomaterials in Construction",
-  //   image:
-  //     "https://images.pexels.com/photos/3831645/pexels-photo-3831645.jpeg?auto=compress&cs=tinysrgb&w=400",
-  // },
+  {
+    name: "Dr Ishfaq Rashid Sheikh ",
+    title: "Postdoctoral Fellow",
+    institution: "Shenzhen University Guangdong China",
+    expertise: "Geotechnical Engineering",
+    image:Img2,
+  },
+
 ];
 
 const KeyNoteSpeaker = () => {
@@ -52,42 +37,42 @@ const KeyNoteSpeaker = () => {
           </p>
         </div>
 
-        {/* <div className="grid grid-cols-1 justify-center w-[20vw]">
-          {speakers.map((speaker, index) => (
-            <div key={index} className="">
-              <div className="">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
+          {speakers.map((speaker: any, index: any) => (
+            <div
+              key={index}
+              className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden"
+            >
+              {/* Image Section */}
+              <div className="flex justify-center bg-grey-100 p-4">
                 <img
                   src={speaker.image}
                   alt={speaker.name}
                   className="h-[50vh] object-contain"
                 />
               </div>
+
+              {/* Content Section */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">
                   {speaker.name}
                 </h3>
-                <div className="space-y-2">
+
+                <div className="space-y-3">
                   <div className="flex items-start space-x-2">
-                    <Award
-                      className="text-teal-600 mt-1 flex-shrink-0"
-                      size={16}
-                    />
+                    <Award className="text-teal-600 mt-1 flex-shrink-0" size={16} />
                     <p className="text-sm text-gray-700">{speaker.title}</p>
                   </div>
+
                   <div className="flex items-start space-x-2">
-                    <Building2
-                      className="text-teal-600 mt-1 flex-shrink-0"
-                      size={16}
-                    />
+                    <Building2 className="text-teal-600 mt-1 flex-shrink-0" size={16} />
                     <p className="text-sm text-gray-700">
                       {speaker.institution}
                     </p>
                   </div>
+
                   <div className="flex items-start space-x-2">
-                    <User
-                      className="text-teal-600 mt-1 flex-shrink-0"
-                      size={16}
-                    />
+                    <User className="text-teal-600 mt-1 flex-shrink-0" size={16} />
                     <p className="text-sm text-gray-600 italic">
                       {speaker.expertise}
                     </p>
@@ -96,42 +81,7 @@ const KeyNoteSpeaker = () => {
               </div>
             </div>
           ))}
-        </div> */}
-
-        <div className="flex justify-center py-10">
-          <div className="w-[500px] bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl shadow-lg overflow-hidden text-center">
-            {/* Image */}
-            <img
-              src={speakers[0].image}
-              alt={speakers[0].name}
-              className="w-full h-[50vh] object-contain bg-white"
-            />
-
-            {/* Details */}
-            <div className="p-6 space-y-3">
-              <h3 className="text-2xl font-bold text-gray-900">
-                {speakers[0].name}
-              </h3>
-              <div className="flex items-center justify-center space-x-2">
-                <Award className="text-teal-600" size={16} />
-                <p className="text-sm text-gray-700">{speakers[0].title}</p>
-              </div>
-              <div className="flex items-center justify-center space-x-2">
-                <Building2 className="text-teal-600" size={16} />
-                <p className="text-sm text-gray-700">
-                  {speakers[0].institution}
-                </p>
-              </div>
-              <div className="flex items-center justify-center space-x-2">
-                <User className="text-teal-600" size={16} />
-                <p className="text-sm text-gray-600 italic">
-                  {speakers[0].expertise}
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
-
         <div className="mt-12 text-center">
           <p className="text-gray-600 bg-teal-50 inline-block px-6 py-3 rounded-lg">
             More speakers to be announced soon!
