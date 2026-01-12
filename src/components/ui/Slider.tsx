@@ -5,33 +5,51 @@ import img2 from "@/assets/Images/UniversityImages/center.png";
 import img1 from "@/assets/Images/UniversityImages/right.png";
 
 const fadeImages = [
-  {
-    url: img1,
-    caption: "First Slide",
-  },
-  {
-    url: img2,
-    caption: "Second Slide",
-  },
-  {
-    url: img3,
-    caption: "Third Slide",
-  },
+  { url: img1, caption: "First Slide" },
+  { url: img2, caption: "Second Slide" },
+  { url: img3, caption: "Third Slide" },
 ];
 
 const SlideShow = () => {
   return (
-    <div style={{marginTop: "6rem"} } className="slide-container">
-      <Fade>
-        {fadeImages.map((fadeImage, index) => (
-          <div key={index}>
-            <img
-              className="w-[100vw] object-contain"
-              src={fadeImage.url}
-            />
-          </div>
-        ))}
-      </Fade>
+    <div className="mt-24 w-full">
+     <Fade
+  duration={3000}
+  transitionDuration={700}
+  infinite
+  indicators
+  arrows={false}
+>
+  {fadeImages.map((fadeImage, index) => (
+    <div
+      key={index}
+      className="w-screen h-[50rem] bg-gray-100 relative"
+      style={{
+        backgroundImage: `url(${fadeImage.url})`,
+        backgroundSize: "contain",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Overlay (optional but recommended) */}
+      <div className="absolute inset-0 bg-black/10"></div>
+
+      {/* Content */}
+      {/* <div className="relative z-10 h-full flex items-center justify-center">
+        <div className="bg-yellow-400/90 px-8 py-4 flex items-center gap-4">
+          <img
+            src="/jspm-logo.png"
+            alt="JSPM"
+            className="h-14"
+          />
+          <h2 className="text-2xl font-bold text-black">
+            APPLY FOR JSPM UNIVERSITY
+          </h2>
+        </div>
+      </div> */}
+        </div>
+      ))}
+    </Fade>
     </div>
   );
 };
