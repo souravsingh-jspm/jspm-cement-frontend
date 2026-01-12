@@ -86,7 +86,19 @@ export default function SubmitPaper() {
                 for publication in partner journals.
               </p>
             </div>
-          </div>
+             <h3 className="text-2xl font-bold text-gray-900 mb-6 mt-4">
+                Submission Template
+              </h3>
+                  <a
+                    href="/Full Paper Template CEMENT'26.docx"
+                    download
+                    className="ml-4 px-6 py-2 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-lg hover:from-teal-600 hover:to-cyan-700 w-[220px] transition-all duration-200 shadow-lg hover:shadow-xl flex items-center space-x-2"
+                  >
+                    <FileText size={18} />
+                    <span>Download Template</span>
+                  </a>
+
+            </div>
 
           <div>
             <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
