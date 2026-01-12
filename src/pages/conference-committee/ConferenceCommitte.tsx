@@ -115,7 +115,7 @@ const committeeData = {
     },
     { name: "Dr. Kiran Patil", affiliation: "Professor, NIT Surat" },
     { name: "Prof. S. Choudhury", affiliation: "Professor, NIT Silchar" },
-    { name: "Prof. AK Mungray", affiliation: "NIT Trichy" },
+    { name: "Prof. AK Mungray", affiliation: "SVNIT Trichy" },
     { name: "Prof. A.I. Lashkar", affiliation: "Professor, NIT Silchar" },
     { name: "Prof. Yogendra Singh", affiliation: "Professor, IIt Roorkee" },
     { name: "Dr. Laxmikant Yadu", affiliation: "Professor, NIT Raipur" },
