@@ -6,8 +6,6 @@ import AccountDetails from "@/components/ui/AccountDetails";
 const guidelines = [
   "Papers should be original and not published elsewhere",
   "Maximum length: 6-8 pages including figures and references",
-  "Use IEEE conference paper format template",
-  "All submissions must be in PDF format",
   "Include keywords and abstract (150-200 words)",
   "Papers will undergo double-blind peer review",
   "Authors must ensure proper citation and avoid plagiarism",

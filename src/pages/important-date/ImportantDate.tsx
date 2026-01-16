@@ -22,7 +22,7 @@ const importantDates: ImportantDate[] = [
   {
     id_id: 1,
     id_title: "Last Date for Submission of Full-Length Paper",
-    id_description: "15th January 2026",
+    id_description: "20th January 2026",
     id_icon: "FileCheck",
     highlight: true,
   },
