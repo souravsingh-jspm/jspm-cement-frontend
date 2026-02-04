@@ -57,6 +57,9 @@ const ORGINIZING_CHAIRS = [
 const committeeData = {
   organizing: [
     {
+      name: "Dr. Snehal Abhyankar"
+    },
+    {
       name: "Dr. Dipak Jadhav",
     },
     {
