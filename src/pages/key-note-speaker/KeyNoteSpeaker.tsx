@@ -87,6 +87,16 @@ const KeyNoteSpeaker = () => {
             More speakers to be announced soon!
           </p>
         </div>
+        <div className="mt-8 text-center">
+        <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-teal-500 to-cyan-600 px-6 py-3 rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white-600" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+          </svg>
+          <span className="text-white font-semibold">
+            All keynote sessions will be streamed live
+          </span>
+        </div>
+      </div>
       </div>
     </section>
   );

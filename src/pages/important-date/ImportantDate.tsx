@@ -63,7 +63,26 @@ const ImportantDate = () => {
             CEMENT&apos;26
           </p>
         </div>
-
+        <div className="my-12 bg-gradient-to-r bg-gradient-to-r from-teal-500 to-cyan-600 rounded-2xl p-8 text-white text-center shadow-xl">
+          <h3 className="text-2xl font-bold mb-3">Virtual Conference Platform</h3>
+          <p className="text-lg opacity-90 max-w-3xl mx-auto mb-4">
+            Conference links and access credentials will be sent to registered participants via email one week before the event.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 mt-6">
+            <div className="bg-white/20 px-4 py-2 rounded-lg">
+              <span className="font-semibold">Live Streaming</span>
+            </div>
+            <div className="bg-white/20 px-4 py-2 rounded-lg">
+              <span className="font-semibold">Virtual Networking</span>
+            </div>
+            <div className="bg-white/20 px-4 py-2 rounded-lg">
+              <span className="font-semibold">Interactive Q&A</span>
+            </div>
+            <div className="bg-white/20 px-4 py-2 rounded-lg">
+              <span className="font-semibold">Digital Proceedings</span>
+            </div>
+          </div>
+        </div>
         <div className="max-w-4xl mx-auto relative">
           <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-teal-500 via-cyan-500 to-teal-500"></div>
 

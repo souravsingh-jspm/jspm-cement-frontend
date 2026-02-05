@@ -63,7 +63,14 @@ const HomePage = () => {
             <div className="inline-block mb-8 px-8 py-3 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-full shadow-xl">
               <p className="text-2xl font-bold tracking-wider">CEMENT'26</p>
             </div>
-
+             <div className="mx-2 inline-block mb-8 px-8 py-3 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-full shadow-xl shadow-xl animate-pulse">
+              <p className="text-lg font-bold tracking-wider flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                </svg>
+                <span>Fully Virtual Conference</span>
+              </p>
+            </div>   
             <p className="text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
               Join leading researchers, industry experts, and academics to
               explore cutting-edge innovations in civil engineering materials
@@ -86,7 +93,7 @@ const HomePage = () => {
                 <div className="text-left">
                   <p className="text-sm text-gray-600">Location</p>
                   <p className="font-semibold text-gray-900">
-                    JSPM University Pune
+                    <span className="text-teal-600">Virtual Conference</span> • Hosted by JSPM University Pune
                   </p>
                 </div>
               </div>

@@ -134,14 +134,18 @@ const ConferenceTheme = () => {
           })}
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-2xl p-8 text-white text-center shadow-xl">
-          <h3 className="text-2xl font-bold mb-3">Additional Topics Welcome</h3>
-          <p className="text-lg opacity-90 max-w-3xl mx-auto">
-            We encourage submissions on related topics within the broader scope
-            of civil engineering materials and emerging technologies. Contact
-            the technical committee for topic suitability.
-          </p>
+      <div className="mt-12 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-2xl p-8 text-white text-center shadow-xl">
+        <div className="flex items-center justify-center space-x-3 mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clipRule="evenodd" />
+          </svg>
+          <h3 className="text-2xl font-bold">Virtual Conference Experience</h3>
         </div>
+        <p className="text-lg opacity-90 max-w-3xl mx-auto">
+          Join us online for interactive sessions, live Q&A, virtual networking, and digital poster presentations. 
+          All sessions will be streamed live with opportunities for global participation.
+        </p>
+      </div>
       </div>
     </section>
   );
