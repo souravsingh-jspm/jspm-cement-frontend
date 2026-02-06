@@ -36,7 +36,7 @@ export default function LandingFooter() {
             </div>
             <p className="text-gray-400 leading-relaxed">
               International Conference on Civil Engineering Material & Emerging
-              Novel Technologies
+              Next Technologies
             </p>
           </div>
 
