@@ -1,4 +1,4 @@
-import { Users, Shield, Globe, Award, Mail, Briefcase, Building, Crown, Target, Trophy, Medal, Sparkles, ChevronRight, Star, UserCheck, Settings, Zap, ExternalLink, Phone } from "lucide-react";
+import {  Shield, Award, Briefcase, Building, Crown, Target, Trophy, ChevronRight, Star, UserCheck, Settings } from "lucide-react";
 import { useState } from "react";
 
 // Import images (keep your existing imports)
@@ -120,7 +120,7 @@ interface CommitteeMember {
 }
 
 // Enhanced CommitteeCard Component
-const CommitteeCard: React.FC<{ member: CommitteeMember; index: number; type: string }> = ({ member, index, type }) => {
+const CommitteeCard: React.FC<{ member: CommitteeMember; index: number; type: string }> = ({ member, type }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const getCardColors = (type: string) => {

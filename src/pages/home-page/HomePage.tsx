@@ -1,7 +1,7 @@
 import { Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import videoSrc from "../../assets/background.mp4";
+import videoSrc from "@/assets/background.mp4";
 
 const HomePage = () => {
   const videoRef = useRef<HTMLVideoElement>(null);

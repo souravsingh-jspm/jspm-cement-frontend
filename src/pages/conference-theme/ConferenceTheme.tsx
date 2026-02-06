@@ -6,15 +6,8 @@ import {
   Zap,
   Recycle,
   Map,
-  Target,
-  Cpu,
-  Globe,
-  Users,
-  BookOpen,
   ArrowRight,
-  TrendingUp,
   Building2,
-  MessageSquare
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";

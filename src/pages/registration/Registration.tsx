@@ -1,5 +1,4 @@
-import { Users, GraduationCap, Building2, Check, Globe, Calendar, CreditCard, FileText, Mail, ArrowRight, Clock, Zap, Star, Shield } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Users, GraduationCap, Building2, Check, Globe, Calendar, CreditCard, FileText, Mail, ArrowRight, Clock, Zap, Star } from "lucide-react";
 import { useState } from "react";
 
 const Registration = () => {
@@ -96,14 +95,6 @@ const Registration = () => {
       description: "Receive confirmation email with joining details",
       color: "from-orange-500 to-red-600",
     },
-  ];
-
-  const paymentMethods = [
-    { name: "UPI", icon: "💳" },
-    { name: "Credit Card", icon: "💳" },
-    { name: "Debit Card", icon: "💳" },
-    { name: "Net Banking", icon: "🏦" },
-    { name: "International Payment", icon: "🌍" },
   ];
 
   return (
