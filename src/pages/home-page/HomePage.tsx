@@ -9,6 +9,7 @@ const HomePage = () => {
   useEffect(() => {
     // Ensure video plays correctly
     if (videoRef.current) {
+      videoRef.current.playbackRate = 0.7;
       videoRef.current.play().catch(console.error);
     }
   }, []);
@@ -52,7 +53,7 @@ const HomePage = () => {
       <meta property="og:type" content="website" />
 
       {/* Video Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden" id="home">
+<section className="relative min-h-screen w-full overflow-hidden mt-25" id="home">
         {/* Video Background */}
         <div className="absolute inset-0">
           <video
